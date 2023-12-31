@@ -17,46 +17,58 @@ const Banner = () => {
   const btnRefOne = useRef(null);
   const dropRefTwo = useRef(null);
   const btnRefTwo = useRef(null);
+  const iconRef = useRef(null);
+  const iconRefOne = useRef(null);
+  const iconRefTwo = useRef(null);
 
-  let handleClick = (dropRefCmn) => {
+  let handleClick = (dropRefCmn, btnRefCmn, iconRefCmn) => {
     const dropStyle = dropRefCmn.current.style;
+    const btnStyle = btnRefCmn.current.style;
+    const iconStyle = iconRefCmn.current.style;
 
     if (dropStyle.display === "block") {
       dropStyle.display = "none";
+      btnStyle.borderColor = "#6A6986";
     } else {
       dropStyle.display = "block";
+      btnStyle.borderColor = "#FF5A3C";
+      iconStyle.color = "#FF5A3C";
     }
   };
 
-  let handleClickOutSite = (event, dropRefCmn, btnRefCmn) => {
+  let handleClickOutSite = (event, dropRefCmn, btnRefCmn, iconRefCmn) => {
+    const btnStyle = btnRefCmn.current.style;
+    const iconStyle = iconRefCmn.current.style;
     if (
       dropRefCmn.current &&
       !dropRefCmn.current.contains(event.target) &&
       !btnRefCmn.current.contains(event.target)
     ) {
       dropRefCmn.current.style.display = "none";
+      btnStyle.borderColor = "#6A6986";
+      iconStyle.color = "#6A6986";
     }
   };
 
   useEffect(() => {
     document.addEventListener("click", (event) => {
-      handleClickOutSite(event, dropRef, btnRef);
+      handleClickOutSite(event, dropRef, btnRef, iconRef);
     });
     document.addEventListener("click", (event) => {
-      handleClickOutSite(event, dropRefOne, btnRefOne);
+      handleClickOutSite(event, dropRefOne, btnRefOne , iconRefOne);
     });
     document.addEventListener("click", (event) => {
-      handleClickOutSite(event, dropRefTwo, btnRefTwo);
+      handleClickOutSite(event, dropRefTwo, btnRefTwo , iconRefTwo);
     });
     return () => {
       document.removeEventListener("click", (event) => {
-        handleClickOutSite(event, dropRef, btnRef);
+        handleClickOutSite(event, dropRef, btnRef, iconRef);
       });
       document.removeEventListener("click", (event) => {
-        handleClickOutSite(event, dropRefOne, btnRefOne);
+        handleClickOutSite(event, dropRefOne, btnRefOne , iconRefOne);
       });
       document.removeEventListener("click", (event) => {
-        handleClickOutSite(event, dropRefTwo, btnRefTwo);
+        handleClickOutSite(event, dropRefTwo, btnRefTwo , iconRefTwo);
       });
     };
   }, []);
@@ -101,11 +113,11 @@ const Banner = () => {
 
       <Container className=" pt-[48px] pb-[36px] shadow-md mt-[190px] px-7 bg-white rounded-lg">
         <Flex className="justify-between items-center">
-          <div className="relative group">
+          <div className="relative">
             <div
               className="w-[267px] h-[47px] border px-3 py-3 border-solid border-[#6A6986] rounded-md"
               onClick={() => {
-                handleClick(dropRef, btnRef);
+                handleClick(dropRef, btnRef, iconRef);
               }}
               ref={btnRef}
             >
@@ -115,7 +127,9 @@ const Banner = () => {
                   as="h3"
                   className="text-[#5C5B7B] font-Nun text-base font-bold"
                 />
-                <FaChevronDown />
+                <span ref={iconRef}>
+                  <FaChevronDown />
+                </span>
               </Flex>
             </div>
 
@@ -139,7 +153,7 @@ const Banner = () => {
             <div
               className="w-[267px] h-[47px] border px-3 py-3 border-solid border-[#6A6986] rounded-md"
               onClick={() => {
-                handleClick(dropRefOne, btnRefOne);
+                handleClick(dropRefOne, btnRefOne , iconRefOne);
               }}
               ref={btnRefOne}
             >
@@ -149,7 +163,10 @@ const Banner = () => {
                   as="h3"
                   className="text-[#5C5B7B] font-Nun text-base font-bold"
                 />
-                <FaChevronDown />
+                <span ref={iconRefOne}>
+                  <FaChevronDown />
+                </span>
+                
               </Flex>
             </div>
 
@@ -175,7 +192,7 @@ const Banner = () => {
             <div
               className="w-[267px] h-[47px] border px-3 py-3 border-solid border-[#6A6986] rounded-md"
               onClick={() => {
-                handleClick(dropRefTwo, btnRefTwo);
+                handleClick(dropRefTwo, btnRefTwo , iconRefTwo);
               }}
               ref={btnRefTwo}
             >
@@ -185,7 +202,10 @@ const Banner = () => {
                   as="h3"
                   className="text-[#5C5B7B] font-Nun text-base font-bold"
                 />
-                <FaChevronDown />
+                <span ref={iconRefTwo}> 
+                  <FaChevronDown />
+                </span>
+                
               </Flex>
             </div>
 
