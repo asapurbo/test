@@ -55,20 +55,20 @@ const Banner = () => {
       handleClickOutSite(event, dropRef, btnRef, iconRef);
     });
     document.addEventListener("click", (event) => {
-      handleClickOutSite(event, dropRefOne, btnRefOne , iconRefOne);
+      handleClickOutSite(event, dropRefOne, btnRefOne, iconRefOne);
     });
     document.addEventListener("click", (event) => {
-      handleClickOutSite(event, dropRefTwo, btnRefTwo , iconRefTwo);
+      handleClickOutSite(event, dropRefTwo, btnRefTwo, iconRefTwo);
     });
     return () => {
       document.removeEventListener("click", (event) => {
         handleClickOutSite(event, dropRef, btnRef, iconRef);
       });
       document.removeEventListener("click", (event) => {
-        handleClickOutSite(event, dropRefOne, btnRefOne , iconRefOne);
+        handleClickOutSite(event, dropRefOne, btnRefOne, iconRefOne);
       });
       document.removeEventListener("click", (event) => {
-        handleClickOutSite(event, dropRefTwo, btnRefTwo , iconRefTwo);
+        handleClickOutSite(event, dropRefTwo, btnRefTwo, iconRefTwo);
       });
     };
   }, []);
@@ -134,7 +134,7 @@ const Banner = () => {
             </div>
 
             <div
-              className="absolute w-[267px] p-3 bg-slate-300 rounded-md border-solid border-[#6A6986] border top-[48px] hidden"
+              className="absolute w-[267px] p-3 bg-slate-300  shadow-xl rounded-md top-[48px] hidden"
               ref={dropRef}
             >
               <ul className="text-center">
@@ -153,7 +153,7 @@ const Banner = () => {
             <div
               className="w-[267px] h-[47px] border px-3 py-3 border-solid border-[#6A6986] rounded-md"
               onClick={() => {
-                handleClick(dropRefOne, btnRefOne , iconRefOne);
+                handleClick(dropRefOne, btnRefOne, iconRefOne);
               }}
               ref={btnRefOne}
             >
@@ -166,12 +166,11 @@ const Banner = () => {
                 <span ref={iconRefOne}>
                   <FaChevronDown />
                 </span>
-                
               </Flex>
             </div>
 
             <div
-              className="absolute w-[267px] p-3 bg-slate-300 rounded-md border-solid border-[#6A6986] border top-[48px] hidden"
+              className="absolute w-[267px] p-3 bg-slate-300  shadow-xl rounded-md top-[48px] hidden"
               ref={dropRefOne}
             >
               <ul className="text-center">
@@ -192,7 +191,7 @@ const Banner = () => {
             <div
               className="w-[267px] h-[47px] border px-3 py-3 border-solid border-[#6A6986] rounded-md"
               onClick={() => {
-                handleClick(dropRefTwo, btnRefTwo , iconRefTwo);
+                handleClick(dropRefTwo, btnRefTwo, iconRefTwo);
               }}
               ref={btnRefTwo}
             >
@@ -202,15 +201,14 @@ const Banner = () => {
                   as="h3"
                   className="text-[#5C5B7B] font-Nun text-base font-bold"
                 />
-                <span ref={iconRefTwo}> 
+                <span ref={iconRefTwo}>
                   <FaChevronDown />
                 </span>
-                
               </Flex>
             </div>
 
             <div
-              className="absolute w-[267px] p-3 bg-slate-300 rounded-md border-solid border-[#6A6986] border top-[48px] hidden"
+              className="absolute w-[267px] p-3 bg-slate-300 rounded-md shadow-xl top-[48px] hidden"
               ref={dropRefTwo}
             >
               <ul className="text-center">
