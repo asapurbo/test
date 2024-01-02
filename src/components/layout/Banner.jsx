@@ -1,4 +1,5 @@
 import { FaChevronDown } from "react-icons/fa";
+import { FaSliders } from "react-icons/fa6";
 import Container from "../Container";
 import Flex from "../Flex";
 import Image from "../Image";
@@ -113,9 +114,10 @@ const Banner = () => {
 
       <Container className=" pt-[48px] pb-[36px] shadow-md mt-[190px] px-7 bg-white rounded-lg">
         <Flex className="justify-between items-center">
+
           <div className="relative">
             <div
-              className="w-[267px] h-[47px] border px-3 py-3 border-solid border-[#6A6986] rounded-md"
+              className="w-[267px] h-[47px] cursor-pointer border px-3 py-3 border-solid border-[#6A6986] rounded-md"
               onClick={() => {
                 handleClick(dropRef, btnRef, iconRef);
               }}
@@ -134,12 +136,12 @@ const Banner = () => {
             </div>
 
             <div
-              className="absolute w-[267px] p-3 bg-slate-300  shadow-xl rounded-md top-[48px] hidden"
+              className="absolute w-[267px] p-3 bg-[#FF5A3C]  shadow-xl rounded-md top-[48px] hidden"
               ref={dropRef}
             >
               <ul className="text-center">
                 <List text="Dhaka" href="#" />
-                <List text="Barishal" href="#" />
+                <List text="Barishal" href="#" />          
                 <List text="Chattogram" href="#" />
                 <List text="Khulna" href="#" />
                 <List text="Gazipur" href="#" />
@@ -151,7 +153,7 @@ const Banner = () => {
 
           <div className="relative">
             <div
-              className="w-[267px] h-[47px] border px-3 py-3 border-solid border-[#6A6986] rounded-md"
+              className="w-[267px] cursor-pointer h-[47px] border px-3 py-3 border-solid border-[#6A6986] rounded-md"
               onClick={() => {
                 handleClick(dropRefOne, btnRefOne, iconRefOne);
               }}
@@ -170,7 +172,7 @@ const Banner = () => {
             </div>
 
             <div
-              className="absolute w-[267px] p-3 bg-slate-300  shadow-xl rounded-md top-[48px] hidden"
+              className="absolute w-[267px] p-3 bg-[#FF5A3C]  shadow-xl rounded-md top-[48px] hidden"
               ref={dropRefOne}
             >
               <ul className="text-center">
@@ -189,7 +191,7 @@ const Banner = () => {
 
           <div className="relative">
             <div
-              className="w-[267px] h-[47px] border px-3 py-3 border-solid border-[#6A6986] rounded-md"
+              className="w-[267px] h-[47px] border cursor-pointer px-3 py-3 border-solid border-[#6A6986] rounded-md"
               onClick={() => {
                 handleClick(dropRefTwo, btnRefTwo, iconRefTwo);
               }}
@@ -208,7 +210,7 @@ const Banner = () => {
             </div>
 
             <div
-              className="absolute w-[267px] p-3 bg-slate-300 rounded-md shadow-xl top-[48px] hidden"
+              className="absolute w-[267px] p-3 bg-[#FF5A3C] rounded-md shadow-xl top-[48px] hidden"
               ref={dropRefTwo}
             >
               <ul className="text-center">
@@ -221,6 +223,16 @@ const Banner = () => {
               </ul>
             </div>
           </div>
+
+          <Flex className="items-center justify-between gap-x-7">
+            <div>
+              <FaSliders className="text-[#FF5A3C] cursor-pointer"/>
+            </div>
+            <div>
+              <Button btn="FIND NOW" className="pt-[18px] pr-[61px] pb-[14px] pl-[53px] rounded-md"/>
+            </div>
+          </Flex>
+
         </Flex>
       </Container>
     </section>
